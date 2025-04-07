@@ -2,7 +2,9 @@
 
 This project provides a **Graphical User Interface (GUI)** for controlling the actuation electronics of an **IPMC device**.
 
-![IPMC Controller GUI](./images/gui.png)
+<p align="center">
+  <img src="./images/gui.png" alt="IPMC Controller GUI"/>
+</p>
 
 ## Features
 
