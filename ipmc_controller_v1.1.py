@@ -2,14 +2,34 @@ import sys
 import time
 import serial
 import serial.tools.list_ports
-
 from PyQt5.QtWidgets import (
     QApplication, QMainWindow, QWidget, QGridLayout, QVBoxLayout,
     QHBoxLayout, QLabel, QLineEdit, QPushButton, QGroupBox, QRadioButton,
     QCheckBox, QMessageBox, QButtonGroup, QDialog
 )
-from PyQt5.QtGui import QPixmap, QFont
+from PyQt5.QtGui import QPixmap, QFont, QGuiApplication, QCursor
 from PyQt5.QtCore import Qt
+
+import os
+if os.name == "nt":
+    try:
+        from ctypes import windll
+        # Para Windows 8.1 o superior, "2" indica Per-Monitor DPI Aware
+        windll.shcore.SetProcessDpiAwareness(2)
+    except Exception:
+        pass
+
+os.environ["QT_AUTO_SCREEN_SCALE_FACTOR"] = "1"
+
+def resource_path(relative_path):
+    """Obtiene la ruta absoluta del recurso, funcione en desarrollo y en el .exe."""
+    try:
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+    return os.path.join(base_path, relative_path)
+
+
 
 class IPMCApp(QMainWindow):
     def __init__(self):
@@ -19,6 +39,18 @@ class IPMCApp(QMainWindow):
         self.signalType = 0
 
         self.initUI()
+        self.center()
+
+    def center(self):
+        # Obtener la pantalla en la posición actual del cursor
+        screen = QGuiApplication.screenAt(QCursor.pos())
+        if screen is None:
+            screen = QGuiApplication.primaryScreen()
+        available_geometry = screen.availableGeometry()
+        window_geometry = self.frameGeometry()
+        center_point = available_geometry.center()
+        window_geometry.moveCenter(center_point)
+        self.move(window_geometry.topLeft())
 
     def initUI(self):
         self.setWindowTitle("IPMC Controller v1.1")
@@ -414,6 +446,7 @@ class IPMCApp(QMainWindow):
         return True
 
     def setImage(self, label, imagePath, width, height):
+        imagePath = resource_path(imagePath)
         pixmap = QPixmap(imagePath)
         label.setPixmap(pixmap.scaled(width, height, Qt.KeepAspectRatio, Qt.SmoothTransformation))
 
@@ -424,6 +457,7 @@ class IPMCApp(QMainWindow):
 def main():
     app = QApplication(sys.argv)
     app.setAttribute(Qt.AA_EnableHighDpiScaling, True)
+    app.setAttribute(Qt.AA_UseHighDpiPixmaps, True)
     window = IPMCApp()
     window.show()
     sys.exit(app.exec_())
