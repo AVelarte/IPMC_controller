@@ -1,8 +1,8 @@
 # IPMC Controller 
 
-![IPMC Controller GUI](./images/gui.png)
-
 This project provides a **Graphical User Interface (GUI)** for controlling the actuation electronics of an **IPMC device**.
+
+![IPMC Controller GUI](./images/gui.png)
 
 ## Features
 
@@ -15,3 +15,4 @@ This project provides a **Graphical User Interface (GUI)** for controlling the a
 - Simultaneous control of **up to two** devices.
 - Voltage adjustment between **1 and 20 V**.
 - Signal frequency selectable between **0.1 and 30 Hz**.
+
