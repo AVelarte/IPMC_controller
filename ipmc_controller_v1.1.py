@@ -423,6 +423,7 @@ class IPMCApp(QMainWindow):
 
 def main():
     app = QApplication(sys.argv)
+    app.setAttribute(Qt.AA_EnableHighDpiScaling, True)
     window = IPMCApp()
     window.show()
     sys.exit(app.exec_())
