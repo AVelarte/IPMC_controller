@@ -1,6 +1,6 @@
 # IPMC Controller 
 
-![IPMC Controller GUI](./screenshot.png)
+![IPMC Controller GUI](.images/screenshot.png)
 
 This project provides a **Graphical User Interface (GUI)** for controlling the actuation electronics of an **IPMC device**.
 
