@@ -181,7 +181,7 @@ class IPMCApp(QMainWindow):
         middleLayout.addWidget(self.currentGroup, stretch=1)
 
         self.currentImageLabel = QLabel()
-        self.setImage(self.currentImageLabel, "sine_2.JPG", 152, 160)
+        self.setImage(self.currentImageLabel, "images/sine.JPG", 152, 160)
         currentLayout.addWidget(self.currentImageLabel, alignment=Qt.AlignHCenter)
 
         self.currentFreqLabel = QLabel("Frequency    30 Hz")
