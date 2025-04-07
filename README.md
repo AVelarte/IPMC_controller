@@ -23,4 +23,4 @@ This project provides a **Graphical User Interface (GUI)** for controlling the a
 The compiled version of the application is located in the `dist` folder:
 
 - Run the `.exe` directly — **no installation required**
-- All dependencies are bundled (PyQt5, pyserial, etc.)
+- All dependencies are bundled (PyQt5, pyserial, etc.) 
