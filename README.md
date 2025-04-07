@@ -18,3 +18,9 @@ This project provides a **Graphical User Interface (GUI)** for controlling the a
 - Voltage adjustment between **1 and 20 V**.
 - Signal frequency selectable between **0.1 and 30 Hz**.
 
+## 🪟 Windows Executable
+
+The compiled version of the application is located in the `dist` folder:
+
+- Run the `.exe` directly — **no installation required**
+- All dependencies are bundled (PyQt5, pyserial, etc.)
