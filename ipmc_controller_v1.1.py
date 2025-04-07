@@ -22,7 +22,7 @@ class IPMCApp(QMainWindow):
 
     def initUI(self):
         self.setWindowTitle("IPMC Controller v1.1")
-        self.setFixedSize(600, 350)
+        self.setMinimumSize(600, 350)
 
         centralWidget = QWidget()
         self.setCentralWidget(centralWidget)
