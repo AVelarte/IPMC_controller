@@ -18,7 +18,7 @@ This project provides a **Graphical User Interface (GUI)** for controlling the a
 - Voltage adjustment between **1 and 20 V**.
 - Signal frequency selectable between **0.1 and 30 Hz**.
 
-## 🪟 Windows Executable
+## 🖥️ Windows Executable
 
 The compiled version of the application is located in the `dist` folder:
 
