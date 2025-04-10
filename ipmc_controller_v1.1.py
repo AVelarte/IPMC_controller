@@ -14,7 +14,6 @@ import os
 if os.name == "nt":
     try:
         from ctypes import windll
-        # Para Windows 8.1 o superior, "2" indica Per-Monitor DPI Aware
         windll.shcore.SetProcessDpiAwareness(2)
     except Exception:
         pass
